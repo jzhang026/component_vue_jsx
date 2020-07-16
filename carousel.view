@@ -1,0 +1,18 @@
+<template>
+</template>
+<script>
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed: {
+    // a computed getter
+    reversedMessage: function () {
+      let i = 0;
+      while (i< 100) i++;
+      return i;
+    }
+  }
+})
+</script>
