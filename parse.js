@@ -373,7 +373,7 @@ function selfClosingStartTag(c) {
     return data;
   }
 }
-
+let tempStack = [];
 // in script
 function scriptData(c) {
   if (c=="<") {

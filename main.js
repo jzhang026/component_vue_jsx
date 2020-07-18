@@ -1,4 +1,3 @@
-import CarouselView from './carousel.view';
 function createElement(Cls, attributes, ...children){
   let o;
   if(typeof Cls === "string") {

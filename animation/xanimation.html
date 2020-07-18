@@ -1,0 +1,31 @@
+<style>
+  .block {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+  }
+</style>
+<button onclick="pause()">pause</button>
+<button onclick="resume()">resume</button>
+<button onclick="restart()">restart</button>
+
+<div id="el" class="block"></div>
+<script type="module">
+  import { Timeline, Animation } from "./animation.js";
+  let el = document.getElementById("el");
+  let linear = (t) => t;
+  let t1 = new Timeline();
+  let animation = new Animation(
+    el.style,
+    "transform",
+    (v) => `translateX(${v}px)`,
+    0,
+    200,
+    5000
+  );
+  t1.add(animation);
+  t1.play();
+  window.pause = t1.pause.bind(t1);
+  window.resume = t1.resume.bind(t1);
+  window.restart = t1.restart.bind(t1);
+</script>
